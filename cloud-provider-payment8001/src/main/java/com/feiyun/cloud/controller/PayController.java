@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * TODO
@@ -68,6 +69,12 @@ public class PayController {
     @GetMapping(value = "/pay/get/{id}")
     @Operation(summary = "查询",description = "查询一条支付流水方法")
     public  ResultData<Pay> getById(@PathVariable("id") Integer id){
+        try {
+            //暂停62秒线程，故意写bug 为了测试feign的超时时间
+            TimeUnit.SECONDS.sleep(62);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         if(id <0) {
             throw new RuntimeException("id不能为负数");
         }
