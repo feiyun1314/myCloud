@@ -29,6 +29,10 @@ spring:
             #- Query=username, \d+  # 要有参数名username并且值还要是整数才能路由
             #- RemoteAddr=192.168.124.1/24 # 外部访问我的IP限制，最大跨度不超过32，目前是1~24它们是 CIDR 表示法。
             #- Method=GET,POST #配置某个请求地址，只能用Get/Post方法访问，方法限制
+            - My=gold  #自定义路由配置
+#            - name: My
+#              args:
+#                userType: diamond
 
 
 
