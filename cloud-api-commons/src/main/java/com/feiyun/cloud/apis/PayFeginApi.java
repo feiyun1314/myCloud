@@ -68,6 +68,12 @@ public interface PayFeginApi {
     public String myRatelimit(@PathVariable("id") Integer id);
 
 
-
+    /**
+     * Micrometer(Sleuth)进行链路监控的例子
+     * @param id
+     * @return
+     */
+    @GetMapping(value = "/pay/micrometer/{id}")
+    public String myMicrometer(@PathVariable("id") Integer id);
 
 }
