@@ -93,4 +93,6 @@ public interface PayFeginApi {
     @GetMapping(value = "/pay/gateway/info")
     public ResultData<String> getGatewayInfo();
 
+
+
 }
